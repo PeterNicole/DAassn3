@@ -34,10 +34,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="FullGameFault" nillable="true" type="tns:FullGameFault" />
-  <xs:complexType name="NobodyPlayingFault">
+  <xs:complexType name="PlayerNotFoundFault">
     <xs:sequence>
       <xs:element minOccurs="0" name="reason" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="NobodyPlayingFault" nillable="true" type="tns:NobodyPlayingFault" />
+  <xs:element name="PlayerNotFoundFault" nillable="true" type="tns:PlayerNotFoundFault" />
 </xs:schema>

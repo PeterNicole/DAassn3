@@ -9,3 +9,9 @@ C:\Github\FS04D\Stu2\home\Ndahlquist-cc\GitHub\School-Projects\PROG3170\NDPTassi
 C:\Github\FS04D\Stu2\home\Ndahlquist-cc\GitHub\School-Projects\PROG3170\NDPTassignment3\NDPTassignment3\bin\Debug\NDPTassignment3.pdb
 C:\Github\FS04D\Stu2\home\Ndahlquist-cc\GitHub\School-Projects\PROG3170\NDPTassignment3\NDPTassignment3\obj\Debug\NDPTassignment3.dll
 C:\Github\FS04D\Stu2\home\Ndahlquist-cc\GitHub\School-Projects\PROG3170\NDPTassignment3\NDPTassignment3\obj\Debug\NDPTassignment3.pdb
+C:\Users\Peter Thomson\Desktop\DAassn3\NDPTassignment3\NDPTassignment3\bin\Debug\NDPTassignment3.dll.config
+C:\Users\Peter Thomson\Desktop\DAassn3\NDPTassignment3\NDPTassignment3\bin\Debug\NDPTassignment3.dll
+C:\Users\Peter Thomson\Desktop\DAassn3\NDPTassignment3\NDPTassignment3\bin\Debug\NDPTassignment3.pdb
+C:\Users\Peter Thomson\Desktop\DAassn3\NDPTassignment3\NDPTassignment3\obj\Debug\NDPTassignment3.csprojResolveAssemblyReference.cache
+C:\Users\Peter Thomson\Desktop\DAassn3\NDPTassignment3\NDPTassignment3\obj\Debug\NDPTassignment3.dll
+C:\Users\Peter Thomson\Desktop\DAassn3\NDPTassignment3\NDPTassignment3\obj\Debug\NDPTassignment3.pdb
