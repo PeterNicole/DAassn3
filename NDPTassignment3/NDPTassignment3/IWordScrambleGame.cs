@@ -1,4 +1,13 @@
-﻿using System;
+﻿/**
+ * PROG 3170 Assignment 3
+ * Nicole Dahlquist and Peter Thomson
+ * IWordScrambleGame.cs
+ * 
+ * Created: November 17, 2015 
+ * 
+ **/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -36,7 +45,7 @@ namespace NDPTassignment3
 
         
         // Exception: user is not playing the game 
-        [FaultContract(typeof(NobodyPlayingFault))]
+        [FaultContract(typeof(PlayerNotFoundFault))]
         [OperationContract]
         // Player ‘playerName’ guesses word ‘guessedWord’ compared with word ‘unscrambledWord’
         // Returns true if ‘guessedWord’ is identical to ‘unscrambledWord’ or false otherwise
@@ -49,10 +58,12 @@ namespace NDPTassignment3
     public class Word
     {
         [DataMember]
-        public string unscrambledWord; // word typed by the game’s host
+        public string unscrambledWord;
         [DataMember]
         public string scrambledWord;
     }
+
+    // Exception: game is already being hosted by someone else
     [DataContract]
     public class AlreadyHostedFault
     {
@@ -62,6 +73,8 @@ namespace NDPTassignment3
         [DataMember]
         public string reason;
     }
+
+    // Exception: maximum number of players reached
     [DataContract]
     public class FullGameFault
     {
@@ -71,6 +84,8 @@ namespace NDPTassignment3
         [DataMember]
         public int maxNumber;
     }
+
+    // Exception: host cannot join the game
     [DataContract]
     public class HostJoinFault
     {
@@ -80,14 +95,18 @@ namespace NDPTassignment3
         [DataMember]
         public string reason;
     }
+
+    // Exception: nobody is hosting the game  
     [DataContract]
     public class NobodyHostingFault
     {
         [DataMember]
         public string reason;
     }
+
+    // Exception: user is not playing the game 
     [DataContract]
-    public class NobodyPlayingFault
+    public class PlayerNotFoundFault
     {
         [DataMember]
         public string reason;

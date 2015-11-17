@@ -1,4 +1,13 @@
-﻿using System;
+﻿/**
+ * PROG 3170 Assignment 3
+ * Nicole Dahlquist and Peter Thomson
+ * WordScrambleGame.cs
+ * 
+ * Created: November 17, 2015 
+ * 
+ **/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -22,14 +31,14 @@ namespace NDPTassignment3
         [OperationBehavior]
         public bool isGameBeingHosted()
         {
-            // TO BE COMPLETED BY YOU: Add exception and program logic
-            return false;
+            //Return true if a user is hosting the game, false otherwise
+            return (userHostingTheGame != null);
         }
 
         [OperationBehavior]
         public string hostGame(String playerName, String wordToScramble)
         {
-            // TO BE COMPLETED BY YOU: Add exception and program logic
+            //Throw exception if a host already exists
             if (userHostingTheGame != null)
             {
                 AlreadyHostedFault fault = new AlreadyHostedFault();
@@ -38,12 +47,12 @@ namespace NDPTassignment3
                 throw new FaultException<AlreadyHostedFault>(fault, fault.reason);
             }
             
+            //Set the host and the game word
             userHostingTheGame = playerName;
             string scrambledWord = scrambleWord(wordToScramble);
             gameWords = new Word();
             gameWords.scrambledWord = scrambledWord;
             gameWords.unscrambledWord = wordToScramble;
-
 
             return gameWords.scrambledWord;
         }
@@ -51,13 +60,15 @@ namespace NDPTassignment3
         [OperationBehavior]
         public Word join(string playerName)
         {
-            // TO BE COMPLETED BY YOU: Add exception and program logic
+            //Throw exception if noone is hosting the game
             if(userHostingTheGame == null)
             {
                 NobodyHostingFault fault = new NobodyHostingFault();
                 fault.reason = "Nobody hosting this game.";
                 throw new FaultException<NobodyHostingFault>(fault, fault.reason);
             }
+
+            //Throw exception if the player trying to join is the same as the host
             if(userHostingTheGame == playerName)
             {
                 HostJoinFault fault = new HostJoinFault();
@@ -65,13 +76,17 @@ namespace NDPTassignment3
                 fault.reason = fault.hostName + " is hosting and cannot join the game";
                 throw new FaultException<HostJoinFault>(fault, fault.reason);
             }
+
+            //Throw exception if maxmimum number of concurrent players have already joined
             if(activePlayers.Count >= MAX_PLAYERS)
             {
                 FullGameFault fault = new FullGameFault();
                 fault.maxNumber = MAX_PLAYERS;
-                fault.reason = "Player count has exceede the maximum number(" + fault.maxNumber + ").";
+                fault.reason = "Player count has exceeded the maximum number(" + fault.maxNumber + ").";
                 throw new FaultException<FullGameFault>(fault, fault.reason);
             }
+
+            //Add new player to the activePlayers list
             activePlayers.Add(playerName);
             return gameWords;
         }
@@ -79,16 +94,18 @@ namespace NDPTassignment3
         [OperationBehavior]
         public bool guessWord(string playerName, string guessedWord, string unscrambledWord)
         {
-            // TO BE COMPLETED BY YOU: Add exception and program logic
+            //Throw exception if the player is not in the game
             if(!activePlayers.Contains(playerName))
             {
-                NobodyPlayingFault fault = new NobodyPlayingFault();
+                PlayerNotFoundFault fault = new PlayerNotFoundFault();
                 fault.reason = "Player is not playing this game.";
-                throw new FaultException<NobodyPlayingFault>(fault, fault.reason);
+                throw new FaultException<PlayerNotFoundFault>(fault, fault.reason);
             }
-            if (guessedWord == unscrambledWord)
-                return true;
-            
+
+            //return true if the guessed word matches the original word
+            if (guessedWord == unscrambledWord) return true;
+
+            //return false if guess did not match
             return false;
         }
 

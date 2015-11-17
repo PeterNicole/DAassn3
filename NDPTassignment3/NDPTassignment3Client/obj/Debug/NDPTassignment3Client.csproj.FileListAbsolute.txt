@@ -3,3 +3,9 @@ C:\Github\FS04D\Stu2\home\Ndahlquist-cc\GitHub\School-Projects\PROG3170\NDPTassi
 C:\Github\FS04D\Stu2\home\Ndahlquist-cc\GitHub\School-Projects\PROG3170\NDPTassignment3\NDPTassignment3Client\bin\Debug\NDPTassignment3Client.pdb
 C:\Github\FS04D\Stu2\home\Ndahlquist-cc\GitHub\School-Projects\PROG3170\NDPTassignment3\NDPTassignment3Client\obj\Debug\NDPTassignment3Client.exe
 C:\Github\FS04D\Stu2\home\Ndahlquist-cc\GitHub\School-Projects\PROG3170\NDPTassignment3\NDPTassignment3Client\obj\Debug\NDPTassignment3Client.pdb
+C:\Users\Peter Thomson\Desktop\DAassn3\NDPTassignment3\NDPTassignment3Client\bin\Debug\NDPTassignment3Client.exe.config
+C:\Users\Peter Thomson\Desktop\DAassn3\NDPTassignment3\NDPTassignment3Client\obj\Debug\NDPTassignment3Client.exe
+C:\Users\Peter Thomson\Desktop\DAassn3\NDPTassignment3\NDPTassignment3Client\obj\Debug\NDPTassignment3Client.pdb
+C:\Users\Peter Thomson\Desktop\DAassn3\NDPTassignment3\NDPTassignment3Client\bin\Debug\NDPTassignment3Client.exe
+C:\Users\Peter Thomson\Desktop\DAassn3\NDPTassignment3\NDPTassignment3Client\bin\Debug\NDPTassignment3Client.pdb
+C:\Users\Peter Thomson\Desktop\DAassn3\NDPTassignment3\NDPTassignment3Client\obj\Debug\NDPTassignment3Client.csprojResolveAssemblyReference.cache
