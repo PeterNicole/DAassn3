@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/NDPTassignment3" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/NDPTassignment3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="AlreadyHostedFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="hostName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reason" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AlreadyHostedFault" nillable="true" type="tns:AlreadyHostedFault" />
+  <xs:complexType name="Word">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="scrambledWord" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="unscrambledWord" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Word" nillable="true" type="tns:Word" />
+  <xs:complexType name="HostJoinFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="hostName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reason" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HostJoinFault" nillable="true" type="tns:HostJoinFault" />
+  <xs:complexType name="NobodyHostingFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="reason" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NobodyHostingFault" nillable="true" type="tns:NobodyHostingFault" />
+  <xs:complexType name="FullGameFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="maxNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="reason" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FullGameFault" nillable="true" type="tns:FullGameFault" />
+  <xs:complexType name="NobodyPlayingFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="reason" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NobodyPlayingFault" nillable="true" type="tns:NobodyPlayingFault" />
+</xs:schema>
