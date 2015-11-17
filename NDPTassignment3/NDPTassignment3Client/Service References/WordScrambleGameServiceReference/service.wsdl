@@ -43,8 +43,8 @@
   <wsdl:message name="IWordScrambleGame_guessWord_OutputMessage">
     <wsdl:part name="parameters" element="tns:guessWordResponse" />
   </wsdl:message>
-  <wsdl:message name="IWordScrambleGame_guessWord_NobodyPlayingFaultFault_FaultMessage">
-    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/NDPTassignment3" name="detail" element="q5:NobodyPlayingFault" />
+  <wsdl:message name="IWordScrambleGame_guessWord_PlayerNotFoundFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/NDPTassignment3" name="detail" element="q5:PlayerNotFoundFault" />
   </wsdl:message>
   <wsdl:portType name="IWordScrambleGame">
     <wsdl:operation name="isGameBeingHosted">
@@ -66,7 +66,7 @@
     <wsdl:operation name="guessWord">
       <wsdl:input wsaw:Action="http://tempuri.org/IWordScrambleGame/guessWord" message="tns:IWordScrambleGame_guessWord_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWordScrambleGame/guessWordResponse" message="tns:IWordScrambleGame_guessWord_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/IWordScrambleGame/guessWordNobodyPlayingFaultFault" name="NobodyPlayingFaultFault" message="tns:IWordScrambleGame_guessWord_NobodyPlayingFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IWordScrambleGame/guessWordPlayerNotFoundFaultFault" name="PlayerNotFoundFaultFault" message="tns:IWordScrambleGame_guessWord_PlayerNotFoundFaultFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWordScrambleGame" type="tns:IWordScrambleGame">
@@ -118,8 +118,8 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="NobodyPlayingFaultFault">
-        <soap:fault use="literal" name="NobodyPlayingFaultFault" namespace="" />
+      <wsdl:fault name="PlayerNotFoundFaultFault">
+        <soap:fault use="literal" name="PlayerNotFoundFaultFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
